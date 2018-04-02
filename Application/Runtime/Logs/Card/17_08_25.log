@@ -1,0 +1,54 @@
+[ 2017-08-25T19:45:30+08:00 ] ::1 /card
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `card` [ RunTime:0.0470s ]
+SQL: SELECT * FROM `card`  [ RunTime:0.0360s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 51 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 51 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 54 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 54 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 57 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 57 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 60 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 60 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 63 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 63 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 66 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 66 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 69 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 69 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 72 行.
+NOTIC: [8] Undefined variable: clan E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 72 行.
+NOTIC: [8] Undefined variable: cardtype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 84 行.
+NOTIC: [8] Undefined variable: cardtype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 84 行.
+NOTIC: [8] Undefined variable: cardtype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 87 行.
+NOTIC: [8] Undefined variable: cardtype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 87 行.
+NOTIC: [8] Undefined variable: cardtype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 90 行.
+NOTIC: [8] Undefined variable: cardtype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 90 行.
+NOTIC: [8] Undefined variable: cardtype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 93 行.
+NOTIC: [8] Undefined variable: cardtype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 93 行.
+NOTIC: [8] Undefined variable: cardtype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 96 行.
+NOTIC: [8] Undefined variable: cardtype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 96 行.
+NOTIC: [8] Undefined variable: cardtype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 99 行.
+NOTIC: [8] Undefined variable: cardtype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 99 行.
+NOTIC: [8] Undefined variable: decktype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 107 行.
+NOTIC: [8] Undefined variable: decktype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 107 行.
+NOTIC: [8] Undefined variable: decktype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 110 行.
+NOTIC: [8] Undefined variable: decktype E:\7_ENVIRONMENT\phpStudy\WWW\Application\Runtime\Cache\Card\5ea9b5df7991c621a82543bb74821771.php 第 110 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.094005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.094005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+

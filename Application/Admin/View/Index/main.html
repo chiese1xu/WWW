@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="/Public/js/jquery-1.4.2.min.js"></script>
+	<script src="/Public/bootstrap/js/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="/Public/bootstrap/css/bootstrap.css" />
+	<style>
+
+	</style>
+</head>
+<body>
+	<div>
+		<!--文章编辑功能区：添加、删除、全选、撤销-->
+		<input type="button" value="添加" onclick="__URL__/add">
+		<input type="button" value="删除" onclick="__URL__/del">
+	</div>
+	<div>
+		<!--文章列表区，显示该类别的文章列表-->
+		<table class="table striped">
+			<tr>
+				<td class="col-xs-1">全选</td>
+				<td class="col-xs-1">序号</td>
+				<td class="col-xs-5">标题</td>
+				<td class="col-xs-2">创建日期</td>
+				<td class="col-xs-1">类别</td>
+				<td class="col-xs-1">编辑</td>
+				<td class="col-xs-1">显示/隐藏</td>
+			</tr>
+		<volist name="articleList" id="article">
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>{$article.id}</td>
+				<td><a href="__URL__/edit?articleId={$article.id}" target="main">{$article.title}</a></td>
+				<td>{$article.createdate}</td>
+				<td>{$article.category}</td>
+				<td><a href="__URL__/edit?articleId={$article.id}" target="main">编辑</a></td>
+				<td><a id="show{$article.id}" href="javascript:show({$article.id})">显示</a><a id="hide{$article.id}" class="hide" href="javascript:hide({$article.id})">隐藏</a></td>
+			</tr>
+		</volist>
+		</table>
+	</div>
+</body>
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="/Public/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="/Public/ueditor/ueditor.all.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var ue = UE.getEditor('container');
+		window.UEDITOR_HOME_URL ='/Public/upload/';
+    </script>
+
+	<!--相应按钮功能-->
+	<script>
+		function add(){
+			alert('add');
+		}
+	</script>
+	<script>
+		$(".hide").hide();
+		function show(id){
+			$("#show"+id).hide();
+			$("#hide"+id).show();
+		}
+		function hide(id){
+			$("#hide"+id).hide();
+			$("#show"+id).show();
+		}
+	</script>
+</html> 

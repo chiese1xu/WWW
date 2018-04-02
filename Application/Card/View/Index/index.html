@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js">
+</script>
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<style>
+.bordered{
+	//border:1px solid grey;
+	width:50px;
+	height:25px;	
+}
+#nav{
+	position:fixed;
+	_position:absolute;
+	_top:expression(documentElement.scrollTop + "px");
+	z-index:9999;
+	background-color:#FFF;
+}
+#main{
+	margin-top:160px;
+}
+.grid{
+	height:40px;
+}
+</style>
+<div class="container col-lg-8 col-lg-offset-1" id="nav">
+	<form action="__URL__/clan" method="post" role="form">
+		<div>
+			<label>卡牌名称：</label>
+			<label class="checkbox-inline bordered">
+				<input type="text" name="title">
+			</label>
+		</div>
+		<div style="float:right">
+			<input id="viewbytext" type="button" value="ViewByText"  onclick="ViewByText()" >
+			<input id="viewbyimage" type="button" value="ViewByImage" onclick="ViewByImage()">
+		</div>
+		<div>
+			<label>氏族：</label>
+			<assign name="Crab" value="Crab" />
+			<assign name="Crane" value="Crane" />
+			<assign name="Lion" value="Lion" />
+			<assign name="Dragon" value="Dragon" />
+			<assign name="Phoenix" value="Phoenix" />
+			<assign name="Scorpion" value="Scorpion" />
+			<assign name="Unicorn" value="Unicorn" />
+			<assign name="Neutral" value="Neutral" />
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Crab" <in name="Crab" value="$clan">checked="true"</in>>蟹
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Crane" <in name="Crane" value="$clan">checked="true"</in>>鹤
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Lion" <in name="Lion" value="$clan">checked="true"</in>>狮
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Dragon" <in name="Dragon" value="$clan">checked="true"</in>>龙
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Phoenix" <in name="Phoenix" value="$clan">checked="true"</in>>凤
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Scorpion" <in name="Scorpion" value="$clan">checked="true"</in>>蝎
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Unicorn" <in name="Unicorn" value="$clan">checked="true"</in>>马
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Neutral" <in name="Neutral" value="$clan">checked="true"</in>>中立
+			</label>
+		</div>
+		<div>
+			<label>类型：</label>
+			<assign name="Stronghold" value="Stronghold" />
+			<assign name="Province" value="Province" />
+			<assign name="Holding" value="Holding" />
+			<assign name="Character" value="Character" />
+			<assign name="Attachment" value="Attachment" />
+			<assign name="Event" value="Event" />
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="cardtype[]" value="Stronghold" <in name="Stronghold" value="$cardtype">checked="true"</in>>要塞
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="cardtype[]" value="Province" <in name="Province" value="$cardtype">checked="true"</in>>行省
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="cardtype[]" value="Holding" <in name="Holding" value="$cardtype">checked="true"</in>>建筑
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="cardtype[]" value="Character" <in name="Character" value="$cardtype">checked="true"</in>>角色
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="cardtype[]" value="Attachment" <in name="Attachment" value="$cardtype">checked="true"</in>>附属
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="cardtype[]" value="Event" <in name="Event" value="$cardtype">checked="true"</in>>事件
+			</label>
+		</div>
+		<div>
+			<label>牌库：</label>
+			<assign name="Dynasty" value="Dynasty" />
+			<assign name="Conflict" value="Conflict" />
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="decktype[]" value="Dynasty" <in name="Dynasty" value="$decktype">checked="true"</in>>朝廷
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="decktype[]" value="Conflict" <in name="Conflict" value="$decktype">checked="true"</in>>冲突
+			</label>
+		</div>	
+		<div>
+			<input type="submit" value="查找">
+		</div>
+	</form>
+</div>
+<div id="main" class="col-lg-10 col-lg-offset-1">
+	<volist name="cardlist" id="card">
+		<div style="float:left;" class="col-lg-4">
+		<!--
+			<table class="table table-bordered" >
+				<tr class="grid"><td class="col-lg-1">费用：{$card.cost}</td><td colspan="2" class="col-lg-4"></td><td rowspan="8" class="col-lg-4"><img width="100%" src="/Public/img/{$card.imgurl}.png"/></td></tr>
+				<tr class="grid"><td>类型：{$card.cardtype}</td><td colspan="2"></td></tr>
+				<tr class="grid"><td>{$card.bonusmilitaryskill}</td><td colspan="2"></td></tr>
+				<tr class="grid"><td>{$card.bonuspoliticalskill}</td><td colspan="2">{$card.traits}</td></tr>
+				<tr class="grid"><td rowspan="3">{$card.title}</td><td colspan="2" rowspan="3">{$card.ability}</td></tr>
+				<tr class="grid"></tr>
+				<tr class="grid"></tr>
+				<tr class="grid"><td>{$card.clansymbol}</td><td colspan="2">{$card.decktype}</td></tr>
+			</table>
+			-->
+			<table class="table table-bordered" >
+				<tr><td>名称：</td><td style="font-size:20px;">{$card.title}</td><td rowspan="8" colspan="2"><img width="100%" src="/Public/img/{$card.imgurl}.png"/></td></tr>
+				<!--<tr><td>费用：</td><td style="background:url(/Public/Icon/fate.png) no-repeat;background-size:contain;filter:alpha(opacity:20);opacity:0.2">{$card.cost}</td></tr>-->
+				<tr><td>费用：</td><td style="color:brown;font-size:26px;">{$card.cost}</td> 
+				<tr><td>类型：</td><td>{$card.cardtype}</td></tr>
+				<tr><td>+军事：</td><td style="color:red;font-size:26px;">{$card.bonusmilitaryskill}</td></tr>
+				<tr><td>+政治：</td><td style="color:blue;font-size:26px;">{$card.bonuspoliticalskill}</td></tr>
+				<tr><td>特性：</td><td>{$card.traits}</td></tr>				
+				<tr><td>氏族：</td><td>{$card.clansymbol}</td></tr>
+				<tr><td>分类：</td><td>{$card.decktype}</td></tr>
+				<tr><td>能力：</td><td colspan="3">{$card.ability}</td></tr>
+			</table>
+		</div>
+	</volist>
+</div>
+<!--
+<div class="container col-lg-8 col-lg-offset-1" id="main">	
+	<table class="table table-striped table-bordered">		
+	<tr>
+		<td>
+			<div>
+				
+			</div>
+		</td>
+		<td class="col-lg-1">
+			<img height="50%" src="/Public/img/{$card.imgurl}.png"/>
+		</td>
+	</tr>
+	<tr>
+		<td class="col-lg-1">{$card.id}</td>
+		<td class="col-lg-1">{$card.title}</td>
+		<td class="col-lg-1">{$card.cost}</td>
+		<td class="col-lg-1">{$card.cardtype}</td>
+		<td class="col-lg-1">{$card.clansymbol}</td>
+		<td class="col-lg-1">{$card.traits}</td>
+		<td class="col-lg-3">{$card.ability}</td>
+		<td class="col-lg-1">{$card.decktype}</td>
+		<td class="col-lg-1"><img height="50%" src="/Public/img/{$card.imgurl}.png"/></td>
+	</tr>
+	</table>
+</div>	
+	-->	
+<script>
+function ViewByText(){
+	$("#viewbytext").css("background-color","silver");
+	$("#viewbyimage").css("background-color","white");
+	var url = "__URL__/clan";
+	var data = {""}
+	$.post("__URL__/clan",data,function(){
+	},json);
+}
+function ViewByImage(){
+	$("#viewbytext").css("background-color","white");
+	$("#viewbyimage").css("background-color","silver");
+}
+</script>
+</html>

@@ -1,0 +1,12 @@
+[ 2017-08-27T11:58:43+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+

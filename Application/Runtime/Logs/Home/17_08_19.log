@@ -1,0 +1,120 @@
+[ 2017-08-19T08:17:24+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+
+[ 2017-08-19T08:30:26+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+
+[ 2017-08-19T08:30:36+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+
+[ 2017-08-19T08:34:32+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+
+[ 2017-08-19T08:34:35+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+
+[ 2017-08-19T08:34:52+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+
+[ 2017-08-19T10:34:10+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+
+[ 2017-08-19T20:49:33+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+
+[ 2017-08-19T22:23:10+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+
+[ 2017-08-19T22:46:14+08:00 ] ::1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+ERR: 1146:Table 'l5rlcg.article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `article`
+

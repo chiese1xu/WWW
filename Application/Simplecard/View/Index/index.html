@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+.bordered{
+	//border:1px solid grey;
+	//width:50px;
+	//height:64px;	
+}
+#nav{
+	position:fixed;
+	_position:absolute;
+	margin-top:-20px;
+	padding-top:20px;
+	z-index:9999;
+	background-color:#FFF;
+}
+#list{	
+	margin-top:160px;;
+	display:none;
+}
+#image{
+	margin-top:160px;
+}
+#viewbyimage{
+	background-color:silver;
+}
+#viewbytext{
+	background-color:white;
+}
+.hiddenimg{
+	position: fixed;
+	display: none;
+}
+.imagecell{
+	width:100%;
+	padding:10px;
+}
+.icon{
+	//width:32px;
+}
+</style>
+<div class="container col-lg-12" id="nav">
+	<form action="__URL__/find" method="post" role="form">
+		<div>
+			<label>卡牌名称：</label>
+			<label class="checkbox-inline bordered">
+				<input type="text" name="title">
+			</label>		
+		</div>
+		<div style="float:right">
+			<div>			
+				<button id="orderbyname" onclick="OrderByName()">名称<label class="glyphicon glyphicon-arrow-up"></label></button>
+				<button id="orderbycost" onclick="OrderByCost()">费用<label class="glyphicon glyphicon-arrow-up"></label></button>
+			</div>	
+			<div>
+				<input id="viewbylist" type="button" value="ViewByList"  onclick="ViewByList()">
+				<input id="viewbyimage" type="button" value="ViewByImage" onclick="ViewByImage()" checked="true">
+			</div>
+					
+		</div>
+		<div>
+			<label>氏族：</label>
+			<assign name="Crab" value="Crab" />
+			<assign name="Crane" value="Crane" />
+			<assign name="Lion" value="Lion" />
+			<assign name="Dragon" value="Dragon" />
+			<assign name="Phoenix" value="Phoenix" />
+			<assign name="Scorpion" value="Scorpion" />
+			<assign name="Unicorn" value="Unicorn" />
+			<assign name="Neutral" value="Neutral" />
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Crab" <in name="Crab" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/crab.png"/>
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Crane" <in name="Crane" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/crane.png"/>
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Lion" <in name="Lion" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/lion.png"/>
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Dragon" <in name="Dragon" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/dragon.png"/>
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Phoenix" <in name="Phoenix" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/phoenix.png"/>
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Scorpion" <in name="Scorpion" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/scorpion.png"/>
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Unicorn" <in name="Unicorn" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/unicorn.png"/>
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="clan[]" value="Neutral" <in name="Neutral" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/neutral.png"/>
+			</label>
+		</div>
+		<div>
+			<label>类型：</label>
+			<assign name="Stronghold" value="Stronghold" />
+			<assign name="Province" value="Province" />
+			<assign name="Holding" value="Holding" />
+			<assign name="Character" value="Character" />
+			<assign name="Attachment" value="Attachment" />
+			<assign name="Event" value="Event" />
+			<assign name="Role" value="Role" />
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="type[]" value="Stronghold" <in name="Stronghold" value="$type">checked="true"</in>>要塞
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="type[]" value="Province" <in name="Province" value="$type">checked="true"</in>>行省
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="type[]" value="Holding" <in name="Holding" value="$type">checked="true"</in>>建筑
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="type[]" value="Character" <in name="Character" value="$type">checked="true"</in>>角色
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="type[]" value="Attachment" <in name="Attachment" value="$type">checked="true"</in>>附属
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="type[]" value="Event" <in name="Event" value="$type">checked="true"</in>>事件
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="type[]" value="Role" <in name="Role" value="$type">checked="true"</in>>身份
+			</label>
+		</div>
+		<div>
+			<label>牌库：</label>
+			<assign name="Dynasty" value="Dynasty" />
+			<assign name="Conflict" value="Conflict" />
+			<assign name="Other" value="Other" />
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="deck[]" value="Dynasty" <in name="Dynasty" value="$deck">checked="true"</in>>朝廷
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="deck[]" value="Conflict" <in name="Conflict" value="$deck">checked="true"</in>>冲突
+			</label>
+			<label class="checkbox-inline bordered">
+				<input type="checkbox" name="other" value="Other" <in name="Other" value="$other">checked="true"</in>>其他
+			</label>
+		</div>	
+		<div>
+			<input type="submit" value="查找">
+			<input type="button" value="清空" onclick="del()">
+			<label>一共有<span style="color:red">{$count}</span>条记录</label>
+		</div>
+	</form>
+</div>
+<div id="list" class="col-lg-12">
+	<table class="table table-bordered" >
+		<tr>
+			<td>名称：</td>
+			<td>费用：</td>
+			<td>类型：</td>
+			<td>特性：</td>
+			<td>氏族：</td>
+			<td>分类：</td>
+		</tr>
+		<volist name="cardlist" id="card">			
+			<tr>
+				<td style="font-size:18px;"><label onmouseover="show({$card.id});" onmouseout="dis({$card.id});">{$card.name}</label></td>
+				<div class="hiddenimg" id="hiddenimg{$card.id}"><img src="/Public/img/{$card.imgurl}"/></div>
+				<td style="color:brown;font-size:20px;">{$card.cost}</td> 
+				<td>{$card.type}</td>
+				<td>{$card.traits}</td>				
+				<td>{$card.clan}</td>
+				<td>{$card.deck}</td>
+			</tr>
+		</volist>
+	</table>
+</div>
+<div id="image" class="col-lg-12">
+	<volist name="cardlist" id="card">
+		<div class="col-lg-2">
+			<img class="imagecell" src="/Public/img/{$card.imgurl}"/>
+		</div>
+	</volist>
+</div>
+<script>
+function show(id){
+	document.getElementById("hiddenimg"+id).style.display="block";
+}
+function dis(id){
+	document.getElementById("hiddenimg"+id).style.display="none";
+}
+</script>
+<script>
+function del(){
+	$(':checkbox').removeAttr("checked");
+}
+</script>
+<script>
+function ViewByList(){
+	$("#viewbylist").css("background-color","silver");
+	$("#viewbyimage").css("background-color","white");
+	document.getElementById("image").style.display="none";
+	document.getElementById("list").style.display="block";
+
+}
+function ViewByImage(){
+	$("#viewbylist").css("background-color","white");
+	$("#viewbyimage").css("background-color","silver");
+	document.getElementById("image").style.display="block";
+	document.getElementById("list").style.display="none";
+}
+</script>
+<script>
+function OrderByCost(){
+alert('cost');
+	{$card.cost}.sort(function cost(a,b){
+		return a-b;
+	});
+}
+</script>
+</html>
