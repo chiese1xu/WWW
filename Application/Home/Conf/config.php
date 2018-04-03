@@ -8,4 +8,6 @@ return array(
 	'DB_PWD' => 'root',
 	'DB_PORT' => '3306',
 	'DB_CHARSET' => 'utf8',	
+	
+	'title' => '网站首页',
 );

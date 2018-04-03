@@ -7,7 +7,7 @@
 </div>
 <div id="main" style="text-align:center;">
   <div id="left">
-	<a href="home/index/list" style="font-size:150px;color:red">文<br>章<br>列<br>表</a>
+	<a href="home/index/home" style="font-size:150px;color:red">文<br>章<br>列<br>表</a>
   </div>
   <div id="middle">
 	<a href="admin/index/index" style="font-size:150px;color:green">管<br>理<br>后<br>台</a>
