@@ -161,7 +161,7 @@
 		</tr>
 		<volist name="cardlist" id="card">			
 			<tr>
-				<td style="font-size:18px;"><label onmouseover="show({$card.id});" onmouseout="dis({$card.id});">{$card.name}</label></td>
+				<td style="font-size:18px;"><label onmouseover="show({$card.id});" onmouseout="dis({$card.id});"><a href="__URL__/detail?id={$card.id}">{$card.name}</a></label></td>
 				<div class="hiddenimg" id="hiddenimg{$card.id}"><img src="/Public/img/{$card.imgurl}"/></div>
 				<td style="color:brown;font-size:20px;">{$card.cost}</td> 
 				<td>{$card.type}</td>
@@ -175,7 +175,7 @@
 <div id="image" class="col-lg-12">
 	<volist name="cardlist" id="card">
 		<div class="col-lg-2">
-			<img class="imagecell" src="/Public/img/{$card.imgurl}"/>
+			<a href="__URL__/detail?id={$card.id}"><img class="imagecell" src="/Public/img/{$card.imgurl}"/></a>
 		</div>
 	</volist>
 </div>

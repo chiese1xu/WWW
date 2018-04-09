@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/Public/layui/css/layui.css">
+<script src="/Public/layui/layui.js"></script>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+#mydeck{
+	width:48%;
+	float:left;
+	margin:10px;
+	border:1px solid red;
+}
+#cardlist{
+	width:48%;
+	float:left;
+	margin:10px;
+	border:1px solid green;
+}
+.iconcolor{
+	color: rgb(255, 140, 60);
+}
+.quantity{
+	width:18px;
+	height:25px;
+	float:left;
+	text-align:center;
+	//background-color:grey;
+	border:1px solid black;
+}
+</style>
+<div id="mydeck">
+	<table id="mydecktable">
+		<tr><td id="num">1</td><td>x <span class="glyphicon glyphicon-user iconcolor"></span><a href="#"> 测试卡牌A的名字</a></td></tr>
+	</table>	
+</div>
+<div id="cardlist">
+	<div>
+		<label class="checkbox-inline bordered">
+			<input class="filter" type="checkbox" name="clan[]" value="Crab" <in name="Crab" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/crab.png"/>
+		</label>
+		<label class="checkbox-inline bordered">
+			<input class="filter" type="checkbox" name="clan[]" value="Crane" <in name="Crane" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/crane.png"/>
+		</label>
+		<label class="checkbox-inline bordered">
+			<input class="filter" type="checkbox" name="clan[]" value="Lion" <in name="Lion" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/lion.png"/>
+		</label>
+		<label class="checkbox-inline bordered">
+			<input id="filterDragon" class="filter" type="checkbox" name="clan[]" value="Dragon" <in name="Dragon" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/dragon.png"/>
+		</label>
+		<label class="checkbox-inline bordered">
+			<input class="filter" type="checkbox" name="clan[]" value="Phoenix" <in name="Phoenix" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/phoenix.png"/>
+		</label>
+		<label class="checkbox-inline bordered">
+			<input class="filter" type="checkbox" name="clan[]" value="Scorpion" <in name="Scorpion" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/scorpion.png"/>
+		</label>
+		<label class="checkbox-inline bordered">
+			<input class="filter" type="checkbox" name="clan[]" value="Unicorn" <in name="Unicorn" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/unicorn.png"/>
+		</label>
+		<label class="checkbox-inline bordered">
+			<input class="filter" type="checkbox" name="clan[]" value="Neutral" <in name="Neutral" value="$clan">checked="true"</in>><img class="icon" src="/Public/Icon/neutral.png"/>
+		</label>
+	</div>
+	
+	<div>
+		<label class="checkbox-inline bordered">
+			<input id="filterDynasty" class="filter" type="checkbox" name="deck[]" value="Dynasty" <in name="Dynasty" value="$deck">checked="true"</in>>朝廷
+		</label>
+		<label class="checkbox-inline bordered">
+			<input class="filter" type="checkbox" name="deck[]" value="Conflict" <in name="Conflict" value="$deck">checked="true"</in>>冲突
+		</label>
+		<label class="checkbox-inline bordered">
+			<input class="filter" type="checkbox" name="other" value="Other" <in name="Other" value="$other">checked="true"</in>>其他
+		</label>
+	</div>
+	<!--
+	<table class="table table-striped table-bordered">
+		<tr><td>数量</td><td>名称</td></tr>
+		<volist name="cardlist" id="card">
+		<tr><td>
+				<div class="quantity" onclick="javascript:removeFromDeck({$card.id})">0</div>
+				<div class="quantity" onclick="javascript:setCardNum({$card.id},1,'{$card.name}')">1</div>
+				<div class="quantity" onclick="javascript:setCardNum({$card.id},2,'{$card.name}')">2</div>
+				<div class="quantity" onclick="javascript:setCardNum({$card.id},3,'{$card.name}')">3</div>
+			</td>
+			<td>
+				<div class="dragon conflict character">dragon conflict character</div>
+			</td></tr>
+		</volist>
+	</table>
+	-->
+	<table class="table table-striped table-bordered">
+		<tr><td>数量</td><td>名称</td></tr>
+		<tr><td>0 1 2 3</td><td><div class="Dragon Conflict character">dragon conflict character1</div></td></tr>
+		<tr><td>0 1 2 3</td><td><div class="Dragon Conflict holding">dragon conflict holding2</div></td></tr>
+		<tr><td>0 1 2 3</td><td><div class="Dragon Dynasty attachment">dragon dynasty attachment3</div></td></tr>
+		<tr><td>0 1 2 3</td><td><div class="Dragon Dynasty character">dragon dynasty character4</div></td></tr>
+		<tr><td>0 1 2 3</td><td><div class="Crab Dynasty attachment">crab dynasty attachment5</div></td></tr>
+		<tr><td>0 1 2 3</td><td><div class="Crab Conflict holding">crab conflict holding6</div></td></tr>
+		<tr><td>0 1 2 3</td><td><div class="Crab Conflict event">crab conflict event7</div></td></tr>
+		<tr><td>0 1 2 3</td><td><div class="Crab Dynasty character">crab dynasty character8</div></td></tr>
+		<tr><td>0 1 2 3</td><td><div class="Unicorn Conflict character">unicorn conflict character9</div></td></tr>
+		<tr><td>0 1 2 3</td><td><div class="Unicorn Dynasty event">unicorn dynasty event10</div></td></tr>
+		<tr><td>0 1 2 3</td><td><div class="Unicorn Conflict character">unicorn conflict character11</div></td></tr>		
+	</table>
+</div>
+<script>
+function setCardNum(id,num,chname){
+	//如果id存在，则修改数值，如果id不存在，则插入一条记录
+	if($("#num"+id).length>0){
+	//span是最简单的容器，可以当作一个形式标签，其取值赋值方法有别于一般的页面元素。
+		//赋值$("#spanid").html(value)
+		//取值$("#spanid").text()
+		$("#num"+id).html(num);
+	}else{
+		//插入一行
+		var newTr = mydecktable.insertRow();
+		//在新行中，插入数量列
+		var numTd = newTr.insertCell();
+		//在新行中，插入名称列
+		var nameTd = newTr.insertCell();
+		numTd.innerHTML ='<td><span id="num'+id+'">'+num+'</span></td>';
+		//alert('<td id="num'+id+'">'+num+'</td>');
+		nameTd.innerHTML ='<td>x <span class="glyphicon glyphicon-user iconcolor"></span><a href="#'+id+'"> '+chname+'</a></td>';
+		//alert(nameTd.innerHTML);
+	}
+}
+function removeFromDeck(id){
+	$("#num"+id).parent().parent().remove();
+}
+</script>
+<script>
+$(".filter").click(function(){
+	//如果龙被选择
+	if(($("#filterDragon").is(":checked"))&&($("#filterDynasty").is(":checked"))){
+		$('.Dragon.Dynasty').parent().parent().hide();
+		alert(1);
+	}
+
+/*
+	if(this.checked==true){
+		//alert(this.value+":checked");
+		$("."+this.value).show();
+	}else{
+		//alert(this.value+":unchecked");
+		$("."+this.value).hide();
+	}
+*/
+	//alert(this.value);
+});
+</script>
+</html>
